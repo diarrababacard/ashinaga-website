@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-
+export const revalidate = 30; // Le site se mettra à jour toutes les 30 secondes
 // Cette fonction va chercher les données d'Ashinaga dans Sanity
 async function getHomePage() {
   const query = `*[_type == "page" && slug.current == "accueil"][0]`;
