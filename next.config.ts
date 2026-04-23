@@ -10,10 +10,7 @@ const nextConfig = {
       },
     ],
   },
-  // 2. Autoriser votre IP locale pour éviter l'erreur de "Cross-origin"
-  experimental: {
-    allowedDevOrigins: ['10.2.0.2', 'localhost:3000'],
-  },
+
 };
 
 export default nextConfig;
