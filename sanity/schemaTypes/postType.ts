@@ -7,9 +7,19 @@ export const postType = defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Titre',
+      title: 'Titre (francais)',
       type: 'string',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'titleEn',
+      title: 'Titre (anglais)',
+      type: 'string',
+    }),
+    defineField({
+      name: 'titlePt',
+      title: 'Titre (portugais)',
+      type: 'string',
     }),
     defineField({
       name: 'slug',
@@ -33,7 +43,19 @@ export const postType = defineType({
     }),
     defineField({
       name: 'excerpt',
-      title: 'Extrait',
+      title: 'Extrait (francais)',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
+      name: 'excerptEn',
+      title: 'Extrait (anglais)',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
+      name: 'excerptPt',
+      title: 'Extrait (portugais)',
       type: 'text',
       rows: 3,
     }),
@@ -45,7 +67,19 @@ export const postType = defineType({
     }),
     defineField({
       name: 'body',
-      title: 'Contenu',
+      title: 'Contenu (francais)',
+      type: 'array',
+      of: [{ type: 'block' }, { type: 'image' }],
+    }),
+    defineField({
+      name: 'bodyEn',
+      title: 'Contenu (anglais)',
+      type: 'array',
+      of: [{ type: 'block' }, { type: 'image' }],
+    }),
+    defineField({
+      name: 'bodyPt',
+      title: 'Contenu (portugais)',
       type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
     }),

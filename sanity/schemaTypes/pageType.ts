@@ -10,8 +10,18 @@ export const pageType = defineType({
     defineField({
       name: 'title',
       type: 'string',
-      title: 'Titre de la page',
+      title: 'Titre de la page (francais)',
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'titleEn',
+      type: 'string',
+      title: 'Titre de la page (anglais)',
+    }),
+    defineField({
+      name: 'titlePt',
+      type: 'string',
+      title: 'Titre de la page (portugais)',
     }),
     defineField({
       name: 'slug',
@@ -29,13 +39,37 @@ export const pageType = defineType({
     defineField({
       name: 'excerpt',
       type: 'text',
-      title: 'Resume court',
+      title: 'Resume court (francais)',
+      rows: 3,
+    }),
+    defineField({
+      name: 'excerptEn',
+      type: 'text',
+      title: 'Resume court (anglais)',
+      rows: 3,
+    }),
+    defineField({
+      name: 'excerptPt',
+      type: 'text',
+      title: 'Resume court (portugais)',
       rows: 3,
     }),
     defineField({
       name: 'body',
       type: 'array',
-      title: 'Contenu',
+      title: 'Contenu (francais)',
+      of: [{ type: 'block' }, { type: 'image' }],
+    }),
+    defineField({
+      name: 'bodyEn',
+      type: 'array',
+      title: 'Contenu (anglais)',
+      of: [{ type: 'block' }, { type: 'image' }],
+    }),
+    defineField({
+      name: 'bodyPt',
+      type: 'array',
+      title: 'Contenu (portugais)',
       of: [{ type: 'block' }, { type: 'image' }],
     }),
   ],
