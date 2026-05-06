@@ -1,6 +1,5 @@
 /** @type {import('next').Config} */
 const nextConfig = {
-  // 1. Autoriser les images de Sanity
   images: {
     remotePatterns: [
       {
@@ -10,10 +9,7 @@ const nextConfig = {
       },
     ],
   },
-  // 2. Autoriser votre IP locale pour éviter l'erreur de "Cross-origin"
-  experimental: {
-    allowedDevOrigins: ['10.2.0.2', 'localhost:3000'],
-  },
+  allowedDevOrigins: ['10.2.0.2', 'localhost:3000'],
 };
 
 export default nextConfig;

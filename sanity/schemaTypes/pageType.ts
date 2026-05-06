@@ -23,8 +23,14 @@ export const pageType = defineType({
     defineField({
       name: 'heroImage',
       type: 'image',
-      title: 'Image de couverture (Épurée)',
+      title: 'Image de couverture',
       options: { hotspot: true },
+    }),
+    defineField({
+      name: 'excerpt',
+      type: 'text',
+      title: 'Resume court',
+      rows: 3,
     }),
     defineField({
       name: 'body',
