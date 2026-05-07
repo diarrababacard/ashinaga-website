@@ -45,8 +45,8 @@ export const dictionaries = {
       programs: "Nos programmes",
       impact: "Notre impact",
       news: "Actualites/blog",
-      donate: "Faire un don",
-      donateShort: "Don",
+      donate: "Soutenir un jeune",
+      donateShort: "Soutenir",
       aria: "Navigation principale",
     },
     footer: {
@@ -54,7 +54,7 @@ export const dictionaries = {
       title: "Soutien et education pour les etudiants orphelins a travers le monde.",
       studio: "Espace edition",
       news: "Actualites",
-      donate: "Faire un don",
+      donate: "Soutenir un jeune",
     },
     home: {
       heroEyebrow: "Ashinaga Senegal",
@@ -93,8 +93,8 @@ export const dictionaries = {
       programs: "Programs",
       impact: "Impact",
       news: "News/blog",
-      donate: "Donate",
-      donateShort: "Give",
+      donate: "Support a young person",
+      donateShort: "Support",
       aria: "Main navigation",
     },
     footer: {
@@ -102,7 +102,7 @@ export const dictionaries = {
       title: "Education and support for orphaned students worldwide.",
       studio: "Editorial space",
       news: "News",
-      donate: "Donate",
+      donate: "Support a young person",
     },
     home: {
       heroEyebrow: "Ashinaga Senegal",
@@ -141,8 +141,8 @@ export const dictionaries = {
       programs: "Programas",
       impact: "Impacto",
       news: "Noticias/blog",
-      donate: "Doar",
-      donateShort: "Doar",
+      donate: "Apoiar um jovem",
+      donateShort: "Apoiar",
       aria: "Navegacao principal",
     },
     footer: {
@@ -150,7 +150,7 @@ export const dictionaries = {
       title: "Educacao e apoio para estudantes orfaos em todo o mundo.",
       studio: "Espaco editorial",
       news: "Noticias",
-      donate: "Doar",
+      donate: "Apoiar um jovem",
     },
     home: {
       heroEyebrow: "Ashinaga Senegal",

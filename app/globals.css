@@ -207,6 +207,88 @@ video {
   box-shadow: 0 12px 28px rgba(120, 190, 33, 0.25);
 }
 
+.donate-link {
+  position: relative;
+  gap: 10px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, var(--ashinaga-crimson), var(--ashinaga-orange) 48%, var(--ashinaga-green));
+  box-shadow:
+    0 16px 34px rgba(255, 104, 88, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.34) inset;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.donate-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0 35%, rgba(255, 255, 255, 0.34) 48%, transparent 62% 100%);
+  transform: translateX(-120%);
+  animation: donate-shine 3.8s ease-in-out infinite;
+}
+
+.donate-link:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 42px rgba(255, 104, 88, 0.36),
+    0 0 0 1px rgba(255, 255, 255, 0.42) inset;
+}
+
+.donate-link span {
+  position: relative;
+  z-index: 1;
+}
+
+.heart-icon {
+  width: 18px;
+  height: 18px;
+  transform: rotate(-45deg);
+  background: white;
+  animation: heart-pulse 1.8s ease-in-out infinite;
+}
+
+.heart-icon::before,
+.heart-icon::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: white;
+}
+
+.heart-icon::before {
+  top: -9px;
+  left: 0;
+}
+
+.heart-icon::after {
+  top: 0;
+  left: 9px;
+}
+
+@keyframes donate-shine {
+  0%,
+  45% {
+    transform: translateX(-120%);
+  }
+  70%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes heart-pulse {
+  0%,
+  100% {
+    transform: rotate(-45deg) scale(0.92);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.08);
+  }
+}
+
 .secondary-button {
   border: 1px solid rgba(255, 255, 255, 0.55);
   color: white;
@@ -215,6 +297,15 @@ video {
 .primary-button.dark {
   background: var(--ink);
   box-shadow: none;
+}
+
+.support-button {
+  gap: 10px;
+  background:
+    linear-gradient(135deg, var(--ashinaga-foss), var(--ink)) !important;
+  box-shadow:
+    0 16px 34px rgba(16, 32, 36, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset !important;
 }
 
 .hero-section {

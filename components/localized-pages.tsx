@@ -111,7 +111,8 @@ export async function HomePage({ locale }: { locale: Locale }) {
           <p className="eyebrow">{dict.home.contribute}</p>
           <h2>{dict.home.donationTitle}</h2>
         </div>
-        <Link href={settings?.donationUrl || localizePath("/faire-un-don", locale)} className="primary-button dark">
+        <Link href={settings?.donationUrl || localizePath("/faire-un-don", locale)} className="primary-button dark support-button">
+          <span className="heart-icon" aria-hidden="true" />
           {dict.nav.donate}
         </Link>
       </section>

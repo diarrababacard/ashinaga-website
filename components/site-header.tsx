@@ -79,6 +79,7 @@ export function SiteHeader() {
           ))}
         </div>
         <Link href={localizePath("/faire-un-don", locale)} className="donate-link">
+          <span className="heart-icon" aria-hidden="true" />
           <span className="donate-full">{dict.nav.donate}</span>
           <span className="donate-short">{dict.nav.donateShort}</span>
         </Link>
