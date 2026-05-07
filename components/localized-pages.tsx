@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RevealOnScroll } from "@/components/reveal-on-scroll";
 import { SectionHeading } from "@/components/section-heading";
 import { getLocalizedContent } from "@/lib/content";
 import { getDictionary, localizePath, type Locale } from "@/lib/i18n";
@@ -38,7 +39,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
         <div className="hero-overlay" />
         <div className="fabric-ribbon hero-ribbon" aria-hidden="true" />
 
-        <div className="hero-content">
+        <div className="hero-content hero-animate">
           <p className="eyebrow">{dict.home.heroEyebrow}</p>
           <h1>{dict.home.heroTitle}</h1>
           <p>{dict.home.heroText}</p>
@@ -62,25 +63,30 @@ export async function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       <section className="intro-grid page-band">
-        <div>
-          <SectionHeading
-            eyebrow={dict.home.missionEyebrow}
-            title={dict.home.missionTitle}
-            text={dict.home.missionText}
-          />
-          <Link href="/studio" className="inline-link">
-            {dict.home.studioLink}
-          </Link>
-        </div>
-        <div className="mission-panel">
-          <span>Ethos</span>
-          <p>{dict.home.ethos}</p>
-        </div>
+        <RevealOnScroll>
+          <div className="intro-grid-inner">
+            <div>
+              <SectionHeading
+                eyebrow={dict.home.missionEyebrow}
+                title={dict.home.missionTitle}
+                text={dict.home.missionText}
+              />
+              <Link href="/studio" className="inline-link">
+                {dict.home.studioLink}
+              </Link>
+            </div>
+            <div className="mission-panel">
+              <span>Ethos</span>
+              <p>{dict.home.ethos}</p>
+            </div>
+          </div>
+        </RevealOnScroll>
       </section>
 
       <section className="program-section">
-        <SectionHeading eyebrow={dict.home.journeyEyebrow} title={dict.home.journeyTitle} />
-        <div className="card-grid">
+        <RevealOnScroll>
+          <SectionHeading eyebrow={dict.home.journeyEyebrow} title={dict.home.journeyTitle} />
+          <div className="card-grid">
           {displayedPrograms.map((program: any) => (
             <article className="feature-card" key={program.title}>
               <p>{program.eyebrow || program.theme || "Programme"}</p>
@@ -88,33 +94,45 @@ export async function HomePage({ locale }: { locale: Locale }) {
               <span>{program.text || program.excerpt}</span>
             </article>
           ))}
-        </div>
+          </div>
+        </RevealOnScroll>
       </section>
 
       <section className="impact-band">
-        <SectionHeading
-          eyebrow={dict.home.impactEyebrow}
-          title={dict.home.impactTitle}
-          text={dict.home.impactText}
-        />
-        <Stats locale={locale} />
+        <RevealOnScroll>
+          <SectionHeading
+            eyebrow={dict.home.impactEyebrow}
+            title={dict.home.impactTitle}
+            text={dict.home.impactText}
+          />
+          <Stats locale={locale} />
+        </RevealOnScroll>
       </section>
 
       <section className="news-section page-band">
-        <SectionHeading eyebrow={dict.home.newsEyebrow} title={dict.home.newsTitle} />
-        <NewsCards posts={displayedPosts} />
+        <RevealOnScroll>
+          <SectionHeading eyebrow={dict.home.newsEyebrow} title={dict.home.newsTitle} />
+          <NewsCards posts={displayedPosts} />
+        </RevealOnScroll>
       </section>
 
       <section className="donation-callout">
         <div className="fabric-ribbon" aria-hidden="true" />
-        <div>
-          <p className="eyebrow">{dict.home.contribute}</p>
-          <h2>{dict.home.donationTitle}</h2>
-        </div>
-        <Link href={settings?.donationUrl || localizePath("/faire-un-don", locale)} className="primary-button dark support-button">
-          <span className="heart-icon" aria-hidden="true" />
-          {dict.nav.donate}
-        </Link>
+        <RevealOnScroll className="donation-callout-inner">
+          <div>
+            <p className="eyebrow">{dict.home.contribute}</p>
+            <h2>{dict.home.donationTitle}</h2>
+          </div>
+          <Link
+            href={settings?.donationUrl || localizePath("/faire-un-don", locale)}
+            className="support-button"
+          >
+            <svg className="donate-link__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            {dict.nav.donate}
+          </Link>
+        </RevealOnScroll>
       </section>
     </main>
   );
