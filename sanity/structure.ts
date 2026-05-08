@@ -1,7 +1,20 @@
 import type {StructureResolver} from 'sanity/structure'
 
-// https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure: StructureResolver = (S) =>
   S.list()
-    .title('Content')
-    .items(S.documentTypeListItems())
+    .title('Ashinaga Senegal')
+    .items([
+      S.listItem()
+        .title('Parametres du site')
+        .schemaType('siteSettings')
+        .child(
+          S.document()
+            .schemaType('siteSettings')
+            .documentId('siteSettings')
+            .title('Parametres du site'),
+        ),
+      S.divider(),
+      ...S.documentTypeListItems().filter(
+        (item) => item.getId() !== 'siteSettings',
+      ),
+    ])

@@ -1,75 +1,86 @@
-import { DocumentIcon } from '@sanity/icons'
 import { defineField, defineType } from 'sanity'
 
-export const pageType = defineType({
-  name: 'page',
-  title: 'Pages du site',
+export const postType = defineType({
+  name: 'post',
+  title: 'Actualites et blog',
   type: 'document',
-  icon: DocumentIcon,
   fields: [
     defineField({
       name: 'title',
+      title: 'Titre (francais)',
       type: 'string',
-      title: 'Titre de la page (francais)',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'titleEn',
+      title: 'Titre (anglais)',
       type: 'string',
-      title: 'Titre de la page (anglais)',
     }),
     defineField({
       name: 'titlePt',
+      title: 'Titre (portugais)',
       type: 'string',
-      title: 'Titre de la page (portugais)',
     }),
     defineField({
       name: 'slug',
-      type: 'slug',
       title: 'Lien URL',
+      type: 'slug',
       options: { source: 'title' },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'heroImage',
-      type: 'image',
-      title: 'Image de couverture',
-      options: { hotspot: true },
+      name: 'category',
+      title: 'Categorie',
+      type: 'string',
+      options: {
+        list: ['Actualite', 'Blog', 'Evenement', 'Portrait', 'Partenaires'],
+      },
+    }),
+    defineField({
+      name: 'publishedAt',
+      title: 'Date de publication',
+      type: 'datetime',
     }),
     defineField({
       name: 'excerpt',
+      title: 'Extrait (francais)',
       type: 'text',
-      title: 'Resume court (francais)',
       rows: 3,
     }),
     defineField({
       name: 'excerptEn',
+      title: 'Extrait (anglais)',
       type: 'text',
-      title: 'Resume court (anglais)',
       rows: 3,
     }),
     defineField({
       name: 'excerptPt',
+      title: 'Extrait (portugais)',
       type: 'text',
-      title: 'Resume court (portugais)',
       rows: 3,
     }),
     defineField({
+      name: 'coverImage',
+      title: 'Image de couverture',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'body',
-      type: 'array',
       title: 'Contenu (francais)',
+      type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
     }),
     defineField({
       name: 'bodyEn',
-      type: 'array',
       title: 'Contenu (anglais)',
+      type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
     }),
     defineField({
       name: 'bodyPt',
-      type: 'array',
       title: 'Contenu (portugais)',
+      type: 'array',
       of: [{ type: 'block' }, { type: 'image' }],
     }),
   ],
