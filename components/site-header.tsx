@@ -43,15 +43,17 @@ export function SiteHeader() {
         className="brand-mark"
         aria-label="Retour à l'accueil — Ashinaga Sénégal"
       >
-        <Image
-          src="/brand/logo-navbar.png"
-          alt=""
-          width={260}
-          height={56}
-          className="brand-logo"
-          priority
-          sizes="(max-width: 760px) min(180px, 48vw), 260px"
-        />
+        <span className="brand-logo-slot">
+          <Image
+            src="/brand/logo-navbar.png"
+            alt=""
+            width={260}
+            height={56}
+            className="brand-logo brand-logo-transparent-bg"
+            priority
+            sizes="(max-width: 760px) min(180px, 48vw), 260px"
+          />
+        </span>
       </Link>
 
       <nav className="main-nav" aria-label={dict.nav.aria}>
