@@ -70,6 +70,9 @@ video {
   display: inline-flex;
   align-items: center;
   min-width: 0;
+  line-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
   transition: opacity 200ms ease;
 }
 
@@ -79,9 +82,9 @@ video {
 
 .brand-logo {
   display: block;
-  height: 40px;
+  height: 42px;
   width: auto;
-  max-width: min(220px, 46vw);
+  max-width: min(268px, 52vw);
   object-fit: contain;
 }
 

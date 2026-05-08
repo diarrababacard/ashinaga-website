@@ -38,15 +38,19 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <Link href={localizePath("/", locale)} className="brand-mark" aria-label="Accueil — Ashinaga Sénégal">
+      <Link
+        href={localizePath("/", locale)}
+        className="brand-mark"
+        aria-label="Retour à l'accueil — Ashinaga Sénégal"
+      >
         <Image
-          src="/brand/logo-horizontal-green.png"
-          alt="Ashinaga Sénégal"
-          width={220}
-          height={48}
+          src="/brand/logo-navbar.png"
+          alt=""
+          width={260}
+          height={56}
           className="brand-logo"
           priority
-          sizes="(max-width: 760px) 150px, 220px"
+          sizes="(max-width: 760px) min(180px, 48vw), 260px"
         />
       </Link>
 
